@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: life-expectancy-predictor
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app/main.py --server.port $PORT --server.enableCORS false
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.13
